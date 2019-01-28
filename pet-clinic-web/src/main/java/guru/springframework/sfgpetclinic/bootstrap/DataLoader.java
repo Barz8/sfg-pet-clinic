@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataLoader implements CommandLineRunner {
 
-    private final OwnerService ownnerService;
+    private final OwnerService ownerService;
     private final VetService vetService;
 
 
-    public DataLoader(OwnerService ownnerService, VetService vetService){
-        this.ownnerService = ownnerService;
+    public DataLoader(OwnerService ownerService, VetService vetService){
+        this.ownerService = ownerService;
         this.vetService = vetService;
     }
 
@@ -26,14 +26,14 @@ public class DataLoader implements CommandLineRunner {
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
 
-        ownnerService.save(owner1);
+        ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setId(2L);
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
 
-        ownnerService.save(owner2);
+        ownerService.save(owner2);
 
         System.out.println("Loaded Owners...");
 
