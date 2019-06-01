@@ -17,7 +17,6 @@ import java.util.List;
 @Controller
 public class OwnerController {
     private static final String VIEWS_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
-    private static final String VIEWS_PETS_CREATE_OR_UPDATE_FORM = "pets/createOrUpdatePetForm";
 
 
     private final OwnerService ownerService;
@@ -35,7 +34,7 @@ public class OwnerController {
     }
 
     @RequestMapping("/find")
-    public String findOnwers(Model model){
+    public String findOwners(Model model){
         model.addAttribute("owner", Owner.builder().build());
         return "owners/findOwners";
     }
