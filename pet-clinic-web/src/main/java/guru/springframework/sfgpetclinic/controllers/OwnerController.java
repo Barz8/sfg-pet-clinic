@@ -2,6 +2,7 @@ package guru.springframework.sfgpetclinic.controllers;
 
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.services.OwnerService;
+import guru.springframework.sfgpetclinic.services.PetService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,11 +17,15 @@ import java.util.List;
 @Controller
 public class OwnerController {
     private static final String VIEWS_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
+    private static final String VIEWS_PETS_CREATE_OR_UPDATE_FORM = "pets/createOrUpdatePetForm";
+
 
     private final OwnerService ownerService;
+    private final PetService petService;
 
-    public OwnerController(OwnerService ownerService) {
+    public OwnerController(OwnerService ownerService, PetService petService) {
         this.ownerService = ownerService;
+        this.petService = petService;
     }
 
 //  Disattiva la possibilità di iniettare l'ID' dalla form
